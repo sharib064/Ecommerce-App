@@ -26,13 +26,16 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.transparent,
-        leading: Builder(builder: (context) {
-          return IconButton(
-              icon: const Icon(Icons.menu, color: Colors.black),
-              onPressed: () {
-                Scaffold.of(context).openDrawer();
-              });
-        }),
+        leading: Padding(
+          padding: const EdgeInsets.only(left: 12.0),
+          child: Builder(builder: (context) {
+            return IconButton(
+                icon: const Icon(Icons.menu, color: Colors.black),
+                onPressed: () {
+                  Scaffold.of(context).openDrawer();
+                });
+          }),
+        ),
       ),
       drawer: Drawer(
         elevation: 0,
@@ -51,7 +54,7 @@ class _HomePageState extends State<HomePage> {
                 Padding(
                   padding: const EdgeInsets.all(25),
                   child: Divider(
-                    color: Colors.grey[800],
+                    color: Colors.grey[900],
                   ),
                 ),
                 const Padding(
@@ -71,7 +74,7 @@ class _HomePageState extends State<HomePage> {
               ],
             ),
             const Padding(
-              padding: EdgeInsets.only(left: 25),
+              padding: EdgeInsets.only(left: 25,bottom: 25),
               child: ListTile(
                 leading: Icon(Icons.logout,color: Colors.white,),
                 title: Text("Logout",style: TextStyle(color: Colors.white),),
