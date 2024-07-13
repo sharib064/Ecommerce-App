@@ -1,4 +1,5 @@
 import 'package:ecommerce/components/bottom_nav_bar.dart';
+import 'package:ecommerce/pages/intro.dart';
 import 'package:flutter/material.dart';
 
 import 'cart.dart';
@@ -83,14 +84,15 @@ class _HomePageState extends State<HomePage> {
                 ),
               ],
             ),
-            const Padding(
-              padding: EdgeInsets.only(left: 25, bottom: 25),
+            Padding(
+              padding: const EdgeInsets.only(left: 25, bottom: 25),
               child: ListTile(
-                leading: Icon(
+                onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const IntroPage(),)),
+                leading: const Icon(
                   Icons.logout,
                   color: Colors.white,
                 ),
-                title: Text(
+                title: const Text(
                   "Logout",
                   style: TextStyle(color: Colors.white),
                 ),
