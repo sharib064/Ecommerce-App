@@ -23,11 +23,15 @@ class IntroPage extends StatelessWidget {
                 ),
               ),
               const SizedBox(
-                height: 48,
+                height: 28,
               ),
               const Text(
                 "Impossible is Nothing",
-                style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 28,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
               const SizedBox(
                 height: 24,

@@ -26,16 +26,13 @@ class _HomePageState extends State<HomePage> {
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.transparent,
-        leading: Padding(
-          padding: const EdgeInsets.only(left: 12.0),
-          child: Builder(builder: (context) {
-            return IconButton(
-                icon: const Icon(Icons.menu, color: Colors.black),
-                onPressed: () {
-                  Scaffold.of(context).openDrawer();
-                });
-          }),
-        ),
+        leading: Builder(builder: (context) {
+          return IconButton(
+              icon: const Icon(Icons.menu, color: Colors.black),
+              onPressed: () {
+                Scaffold.of(context).openDrawer();
+              });
+        }),
       ),
       drawer: Drawer(
         elevation: 0,
@@ -45,7 +42,8 @@ class _HomePageState extends State<HomePage> {
           children: [
             Column(
               children: [
-                DrawerHeader(
+                Container(
+                  padding: const EdgeInsets.only(top: 48, left: 48, right: 48),
                   child: Image.asset(
                     'lib/images/adidas2.png',
                     color: Colors.white,
@@ -60,24 +58,42 @@ class _HomePageState extends State<HomePage> {
                 const Padding(
                   padding: EdgeInsets.only(left: 25),
                   child: ListTile(
-                    leading: Icon(Icons.home,color: Colors.white,),
-                    title: Text("Home",style: TextStyle(color: Colors.white),),
+                    leading: Icon(
+                      Icons.home,
+                      color: Colors.white,
+                    ),
+                    title: Text(
+                      "Home",
+                      style: TextStyle(color: Colors.white),
+                    ),
                   ),
                 ),
                 const Padding(
                   padding: EdgeInsets.only(left: 25),
                   child: ListTile(
-                    leading: Icon(Icons.info,color: Colors.white,),
-                    title: Text("Info",style: TextStyle(color: Colors.white),),
+                    leading: Icon(
+                      Icons.info,
+                      color: Colors.white,
+                    ),
+                    title: Text(
+                      "Info",
+                      style: TextStyle(color: Colors.white),
+                    ),
                   ),
                 ),
               ],
             ),
             const Padding(
-              padding: EdgeInsets.only(left: 25,bottom: 25),
+              padding: EdgeInsets.only(left: 25, bottom: 25),
               child: ListTile(
-                leading: Icon(Icons.logout,color: Colors.white,),
-                title: Text("Logout",style: TextStyle(color: Colors.white),),
+                leading: Icon(
+                  Icons.logout,
+                  color: Colors.white,
+                ),
+                title: Text(
+                  "Logout",
+                  style: TextStyle(color: Colors.white),
+                ),
               ),
             ),
           ],
@@ -87,6 +103,7 @@ class _HomePageState extends State<HomePage> {
         onTabChange: (index) => navigateBottomBar(index),
       ),
       body: pages[selectedIndex],
+      backgroundColor: Colors.grey[300],
     );
   }
 }
