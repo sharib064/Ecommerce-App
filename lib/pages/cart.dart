@@ -17,7 +17,6 @@ class _CartPageState extends State<CartPage> {
   Widget build(BuildContext context) {
     return Consumer<Cart>(
       builder: (context, value, child) {
-        // total = 0; // Reset total here to recalculate
         return Padding(
           padding: const EdgeInsets.symmetric(horizontal: 25.0),
           child: Column(
@@ -51,6 +50,9 @@ class _CartPageState extends State<CartPage> {
                     style: TextStyle(fontSize: 20, color: Colors.grey[600]),
                   )
                 ],
+              ),
+              const Divider(
+                color: Colors.transparent,
               )
             ],
           ),
