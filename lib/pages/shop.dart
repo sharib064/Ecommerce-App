@@ -11,12 +11,23 @@ class ShopPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     addShoeToCart(Shoe shoe) {
-      Provider.of(context, listen: false).addItemToCart(shoe);
+      Provider.of<Cart>(context, listen: false).addItemToCart(shoe);
       showDialog(
         context: context,
-        builder: (context) => const AlertDialog(
-          title: Text("Successfully Added!"),
-          content: Text("Check your cart"),
+        builder: (context) => AlertDialog(
+          backgroundColor: Colors.grey[900],
+          title: const Text(
+            "Successfully Added!",
+            style: TextStyle(
+              color: Colors.white,
+            ),
+            textAlign: TextAlign.center,
+          ),
+          content: const Text(
+            "Check your cart",
+            style: TextStyle(color: Colors.white),
+            textAlign: TextAlign.center,
+          ),
         ),
       );
     }
@@ -24,35 +35,15 @@ class ShopPage extends StatelessWidget {
     return Consumer<Cart>(
       builder: (context, value, child) => Column(
         children: [
-          Container(
-            padding: const EdgeInsets.all(12),
-            margin: const EdgeInsets.symmetric(horizontal: 25),
-            decoration: BoxDecoration(
-                color: Colors.grey[200],
-                borderRadius: BorderRadius.circular(8)),
-            child: const Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Text(
-                  "Search",
-                  style: TextStyle(color: Colors.grey),
-                ),
-                Icon(
-                  Icons.search,
-                  color: Colors.grey,
-                ),
-              ],
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 25.0),
-            child: Text(
-              "everyone flies... some flies longer than others",
-              style: TextStyle(color: Colors.grey[600]),
-            ),
-          ),
+          // Padding(
+          //   padding: const EdgeInsets.symmetric(vertical: 25.0),
+          //   child: Text(
+          //     "everyone flies... some flies longer than others",
+          //     style: TextStyle(color: Colors.grey[600]),
+          //   ),
+          // ),
           const Padding(
-            padding: EdgeInsets.symmetric(horizontal: 25.0),
+            padding: EdgeInsets.symmetric(horizontal: 25.0, vertical: 10),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -68,12 +59,12 @@ class ShopPage extends StatelessWidget {
               ],
             ),
           ),
-          const SizedBox(
-            height: 10,
-          ),
+          // const SizedBox(
+          //   height: 10,
+          // ),
           Expanded(
             child: ListView.builder(
-              itemCount: 4,
+              itemCount: value.getShoeList().length,
               scrollDirection: Axis.horizontal,
               itemBuilder: (context, index) {
                 Shoe shoe = value.getShoeList()[index];
@@ -85,7 +76,7 @@ class ShopPage extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(top: 25, left: 25, right: 25),
+            padding: const EdgeInsets.only(top: 10, left: 25, right: 25),
             child: Divider(
               color: Colors.grey[300],
             ),

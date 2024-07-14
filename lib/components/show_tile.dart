@@ -6,11 +6,10 @@ import 'package:ecommerce/models/shoe.dart';
 class ShowTile extends StatelessWidget {
   final Shoe shoe;
   final void Function()? onTap;
-  const ShowTile({super.key, required this.shoe,required this.onTap});
+  const ShowTile({super.key, required this.shoe, required this.onTap});
 
   @override
   Widget build(BuildContext context) {
-
     return Container(
       margin: const EdgeInsets.only(left: 25),
       width: 280,
@@ -43,7 +42,10 @@ class ShowTile extends StatelessWidget {
                       style: const TextStyle(
                           fontWeight: FontWeight.bold, fontSize: 20),
                     ),
-                    Text('\$'+ shoe.price,style: const TextStyle(color: Colors.grey),)
+                    Text(
+                      '\$' + shoe.price.toString(),
+                      style: const TextStyle(color: Colors.grey),
+                    )
                   ],
                 ),
                 GestureDetector(

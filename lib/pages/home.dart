@@ -29,11 +29,30 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: Colors.transparent,
         leading: Builder(builder: (context) {
           return IconButton(
-              icon: const Icon(Icons.menu, color: Colors.black),
+              icon: Icon(Icons.menu, color: Colors.grey[900]),
               onPressed: () {
                 Scaffold.of(context).openDrawer();
               });
         }),
+        title: Container(
+          padding: const EdgeInsets.all(12),
+          // margin: const EdgeInsets.symmetric(horizontal: 45),
+          decoration: BoxDecoration(
+              color: Colors.grey[200], borderRadius: BorderRadius.circular(8)),
+          child: const Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                "Search",
+                style: TextStyle(color: Colors.grey),
+              ),
+              Icon(
+                Icons.search,
+                color: Colors.grey,
+              ),
+            ],
+          ),
+        ),
       ),
       drawer: Drawer(
         elevation: 0,
@@ -87,7 +106,11 @@ class _HomePageState extends State<HomePage> {
             Padding(
               padding: const EdgeInsets.only(left: 25, bottom: 25),
               child: ListTile(
-                onTap: () => Navigator.push(context, MaterialPageRoute(builder: (context) => const IntroPage(),)),
+                onTap: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const IntroPage(),
+                    )),
                 leading: const Icon(
                   Icons.logout,
                   color: Colors.white,
