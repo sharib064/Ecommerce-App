@@ -36,7 +36,6 @@ class _HomePageState extends State<HomePage> {
         }),
         title: Container(
           padding: const EdgeInsets.all(12),
-          // margin: const EdgeInsets.symmetric(horizontal: 45),
           decoration: BoxDecoration(
               color: Colors.grey[200], borderRadius: BorderRadius.circular(8)),
           child: const Row(
@@ -75,14 +74,19 @@ class _HomePageState extends State<HomePage> {
                     color: Colors.grey[900],
                   ),
                 ),
-                const Padding(
-                  padding: EdgeInsets.only(left: 25),
+                Padding(
+                  padding: const EdgeInsets.only(left: 25),
                   child: ListTile(
-                    leading: Icon(
+                    onTap: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => const HomePage(),
+                        )),
+                    leading: const Icon(
                       Icons.home,
                       color: Colors.white,
                     ),
-                    title: Text(
+                    title: const Text(
                       "Home",
                       style: TextStyle(color: Colors.white),
                     ),
