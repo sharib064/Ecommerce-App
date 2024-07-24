@@ -1,4 +1,4 @@
-# Ecommerce App of Adidas Shoes using State Management
+# Ecommerce App of Adidas Shoes using State Management without Api
 
 
 
