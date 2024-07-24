@@ -5,14 +5,14 @@ class Cart extends ChangeNotifier {
   int total = 0;
   List<Shoe> shoeShop = [
     Shoe(
-        name: "Runfalcon 3 Black",
+        name: "Runfalcon 3",
         price: 1599,
         description:
             "Cushioned running shoes made in the part with recyled materiled.",
         imagePath:
             "lib/images/Runfalcon_3.0_Shoes_Black_HQ3790_01_standard.png"),
     Shoe(
-        name: "Stan Smith White",
+        name: "Stan Smith",
         price: 999,
         description:
             "Timeless appeal. Effortless style. Everyday versatility..",
@@ -25,7 +25,7 @@ class Cart extends ChangeNotifier {
         imagePath:
             "lib/images/Gazelle_Italy_Shoes_Blue_ID3725_01_standard.png"),
     Shoe(
-        name: "Samba OG White",
+        name: "Samba OG",
         price: 987,
         description:
             "Born on the pitch, the Samba is a timeless icon of street style.",

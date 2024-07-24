@@ -28,15 +28,21 @@ class _CartPageState extends State<CartPage> {
               ),
               const SizedBox(height: 10),
               Expanded(
-                child: ListView.builder(
-                  itemCount: value.getUserCart().length,
-                  itemBuilder: (context, index) {
-                    Shoe individualShoe = value.getUserCart()[index];
-                    return CartItem(
-                      shoe: individualShoe,
-                    );
-                  },
-                ),
+                child: value.getUserCart().isEmpty
+                    ? Center(
+                        child: Text(
+                        "Cart is empty",
+                        style: TextStyle(fontSize: 20, color: Colors.grey[600]),
+                      ))
+                    : ListView.builder(
+                        itemCount: value.getUserCart().length,
+                        itemBuilder: (context, index) {
+                          Shoe individualShoe = value.getUserCart()[index];
+                          return CartItem(
+                            shoe: individualShoe,
+                          );
+                        },
+                      ),
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
